@@ -1,14 +1,14 @@
 <template>
   <header class="top-bar spread">
     <nav class="top-bar-nav">
-      <router-link to="/" class="top-bar-link">
+      <router-link to="/" class="top-bar-link" id="home">
         <i class="icofont-spoon-and-fork"></i>
         <span>Home</span>
       </router-link>
-      <router-link to="/products" class="top-bar-link">
+      <router-link to="/products" class="top-bar-link" id="products">
         <span>Products</span>
       </router-link>
-      <router-link to="/past-orders" class="top-bar-link">
+      <router-link to="/past-orders" class="top-bar-link" id="past-orders">
         <span>Past Orders</span>
       </router-link>
     </nav>
@@ -76,6 +76,18 @@ export default {
         {
           element: '.top-bar-nav',
           intro: 'This is the navigation bar. Click here to access different pages.'
+        },
+        {
+          element: '#home',
+          intro: 'This is the Home page.'
+        },
+        {
+          element: '#products',
+          intro: 'This is the Products page.'
+        },
+        {
+          element: '#past-orders',
+          intro: 'This is the Past Orders page.'
         },
         {
           element: '.top-bar-cart-link',
