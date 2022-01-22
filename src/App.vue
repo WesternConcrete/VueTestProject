@@ -31,10 +31,12 @@
   />
 
 </template>
-
 <script>
+import 'intro.js/minified/introjs.min.css'
+import 'intro.js/themes/introjs-modern.css'
 import Sidebar from '@/components/Sidebar.vue'
 import food from '@/food.json'
+import introJs from 'intro.js'
 
 export default {
   components: {
@@ -66,6 +68,23 @@ export default {
     removeItem (name) {
       delete this.cart[name]
     }
+  },
+  mounted () {
+    const intro = introJs()
+    intro.setOptions({
+      steps: [
+        {
+          element: '.top-bar-nav',
+          intro: 'This is the navigation bar. Click here to access different pages.'
+        },
+        {
+          element: '.top-bar-cart-link',
+          intro: 'This is the cart. It contains all of the items that you have selected to purchase.'
+        }
+      ],
+      nextToDone: true
+    })
+    intro.start()
   }
 }
 </script>
